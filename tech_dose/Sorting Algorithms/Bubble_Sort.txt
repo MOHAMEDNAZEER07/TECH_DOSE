@@ -1,0 +1,39 @@
+The basic Bubble Sort can be optimized by introducing a flag that checks whether any swaps were made during a particular pass.
+If no swaps are made, the array is already sorted, and we can terminate the sorting process early, reducing unnecessary iterations.
+
+
+void bubbleSortOptimized(int arr[], int n) {
+    bool swapped;
+    for (int i = 0; i < n-1; i++) {
+        swapped = false;
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                swapped = true;
+            }
+        }
+        if (!swapped)
+            break;
+    }
+}
+
+
+
+Time Complexity:
+
+    Best Case: O(n) when the array is already sorted.
+    Average Case: O(n^2)
+    Worst Case: O(n^2)
+
+Advantages of Optimized Bubble Sort:
+
+    Early Termination: In the best case scenario (e.g., already sorted array), the optimized version can terminate early, improving the performance from O(n^2) to O(n).
+    Simple Implementation: Easy to implement with a minor modification to the basic Bubble Sort algorithm.
+
+Disadvantages:
+
+    Still inefficient on larger datasets: Even with the optimization, the worst-case time complexity remains O(n^2), making it inefficient for large datasets compared to more efficient sorting algorithms like Merge Sort and Quick Sort.
+
+This version is more efficient when the input is already sorted or nearly sorted.
