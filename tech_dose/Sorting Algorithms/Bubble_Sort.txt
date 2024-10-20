@@ -2,7 +2,7 @@ The basic Bubble Sort can be optimized by introducing a flag that checks whether
 If no swaps are made, the array is already sorted, and we can terminate the sorting process early, reducing unnecessary iterations.
 
 
-void bubbleSortOptimized(int arr[], int n) {
+`void bubbleSortOptimized(int arr[], int n) {
     bool swapped;
     for (int i = 0; i < n-1; i++) {
         swapped = false;
@@ -18,7 +18,7 @@ void bubbleSortOptimized(int arr[], int n) {
             break;
     }
 }
-
+`
 
 
 Time Complexity:
